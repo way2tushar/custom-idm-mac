@@ -4,7 +4,7 @@ A native macOS download manager with multi-connection, resumable downloads, plus
 Chrome and Safari extensions that send browser downloads to it.
 
 The design came from studying how Internet Download Manager integrates with
-browsers (see [`../analysis/FINDINGS.md`](../analysis/FINDINGS.md)). The code is
+browsers. The code is
 original: no IDM code, assets, branding or wire protocol is reused.
 
 ## How it works

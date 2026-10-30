@@ -4,8 +4,8 @@ Multi-connection download managers for **macOS** (MacDM, native SwiftUI) and **W
 with browser extensions that hand downloads and page videos to the app.
 
 The project started from a study of how Internet Download Manager integrates with browsers, using the
-[REA](https://github.com/morluto/rea) reverse-engineering toolkit; the findings are in
-[`analysis/FINDINGS.md`](analysis/FINDINGS.md). Both apps are original implementations: no IDM code, icons,
+[REA](https://github.com/morluto/rea) reverse-engineering toolkit (research notes are kept locally, outside
+this repository). Both apps are original implementations: no IDM code, icons,
 branding or wire protocol is reused, and IDM's installer is not part of this repository.
 
 ## Features
@@ -43,7 +43,6 @@ WinDM/                      Windows app (.NET 10)
   src/WinDM.Cli/            command-line engine and headless bridge for testing on any OS
   src/WinDM/                Windows Forms app: windows, tray icon, options, scheduler
   scripts/publish.sh        builds dist/WinDM-win-x64.zip
-analysis/FINDINGS.md        what was learned from IDM 6.43, and what was designed independently
 ```
 
 ## How the browser integration works

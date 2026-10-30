@@ -1,12 +1,10 @@
 # macOS
 .DS_Store
 
-# Third-party material kept locally for study only. Never commit it:
+# Third-party material and research notes kept locally only. Never commit them:
 # IDM's installer and the parts extracted from it are Tonec's copyrighted files.
 exe/
-analysis/extracted/
-analysis/*.json
-analysis/*.txt
+analysis/
 
 # REA (separate git repository, cloned as a tool)
 rea/
