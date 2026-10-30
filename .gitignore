@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+
+# Third-party material kept locally for study only. Never commit it:
+# IDM's installer and the parts extracted from it are Tonec's copyrighted files.
+exe/
+analysis/extracted/
+analysis/*.json
+analysis/*.txt
+
+# REA (separate git repository, cloned as a tool)
+rea/
+
+# Build output
+MacDM/.build/
+MacDM/build/
+MacDM/dist/
+MacDM/.test/
+WinDM/**/bin/
+WinDM/**/obj/
+WinDM/dist/
+WinDM/.test/

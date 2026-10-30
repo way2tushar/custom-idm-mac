@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <!-- Lets the Windows app be built (not run) on macOS and Linux. -->
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>WinDM</AssemblyName>
+    <RootNamespace>WinDM</RootNamespace>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <Version>1.0.0</Version>
+    <Product>WinDM</Product>
+    <Description>Multi-connection download manager with browser integration and stream downloads</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../WinDM.Core/WinDM.Core.csproj" />
+    <EmbeddedResource Include="app.ico" LogicalName="WinDM.app.ico" />
+  </ItemGroup>
+</Project>

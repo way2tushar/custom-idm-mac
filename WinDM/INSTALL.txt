@@ -1,0 +1,33 @@
+WinDM for Windows - installation
+=================================
+
+Requirements: Windows 10 or 11, 64-bit. Nothing else needs to be installed first.
+
+1. Put the app somewhere permanent
+   Unzip, then move the "WinDM" folder to a permanent place, for example:
+       C:\Users\<you>\AppData\Local\Programs\WinDM
+   (Settings for "launch at sign-in" and browser links point to WinDM.exe where it is,
+   so don't run it from the Downloads folder or the zip.)
+
+2. Start WinDM.exe
+   The app is not code-signed, so Windows SmartScreen may say "Windows protected your PC".
+   Click "More info", then "Run anyway". This is needed once.
+
+3. Video tools (ffmpeg)
+   On first start, WinDM offers to install ffmpeg with winget. Click Install.
+   ffmpeg is used to join video streams with their audio and save them as MP4.
+
+4. Browser extension (Chrome or Edge)
+   a. Move the "Browser Extension" folder somewhere permanent (the browser loads it from there).
+   b. Chrome: open chrome://extensions    Edge: open edge://extensions
+   c. Turn on "Developer mode".
+   d. Click "Load unpacked" and choose the "Browser Extension" folder.
+   The extension is named "MacDM Integration"; it works with WinDM the same way.
+   If Chrome or Edge asks "Open WinDM?" when a download starts, tick "Always allow" and click Open.
+
+5. Optional: Options > General > "Launch WinDM when I sign in to Windows".
+
+Closing the window keeps WinDM running in the notification area (next to the clock),
+so downloads continue. Right-click its icon and choose Exit to quit.
+
+Your settings and download list are stored in %APPDATA%\WinDM.
