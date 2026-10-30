@@ -57,6 +57,9 @@ private struct GeneralOptions: View {
                 Text("The Chrome and Safari extensions connect to http://127.0.0.1:\(String(LocalServer.port)). Changes apply after relaunch. File types to capture are set in each extension's popup.")
                     .font(.caption).foregroundStyle(.secondary)
             }
+            Section("Video tools") {
+                VideoToolsRow()
+            }
             Section("Sounds") {
                 Toggle("Play a sound when a download completes", isOn: $playSound)
             }
@@ -288,5 +291,26 @@ private struct AddressListEditor: View {
         guard !address.isEmpty, !model.items.contains(address) else { return }
         model.items.append(address)
         model.draft = ""
+    }
+}
+
+private struct VideoToolsRow: View {
+    @ObservedObject private var setup = FFmpegSetup.shared
+    @Environment(\.openWindow) private var openWindow
+
+    var body: some View {
+        LabeledContent("ffmpeg") {
+            HStack {
+                switch setup.state {
+                case .found: Label("Installed", systemImage: "checkmark.circle.fill").foregroundStyle(.green)
+                case .installing: Text("Installing…").foregroundStyle(.secondary)
+                default: Label("Not installed", systemImage: "exclamationmark.triangle.fill").foregroundStyle(.orange)
+                }
+                if !setup.isInstalled {
+                    Button("Install…") { openWindow(id: "ffmpeg") }
+                }
+            }
+        }
+        .onAppear { setup.refresh() }
     }
 }

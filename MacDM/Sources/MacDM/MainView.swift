@@ -49,7 +49,11 @@ struct MainView: View {
         .onReceive(NotificationCenter.default.publisher(for: MenuAction.notification)) { note in
             if let raw = note.object as? String, let action = MenuAction(rawValue: raw) { perform(action) }
         }
-        .onAppear { WindowOpener.action = openWindow }
+        .onAppear {
+            WindowOpener.action = openWindow
+            // First launch without ffmpeg: offer to install it (once, unless turned off in that window).
+            if FFmpegSetup.shared.shouldPromptAtLaunch { openWindow(id: "ffmpeg") }
+        }
     }
 
     private func perform(_ action: MenuAction) {

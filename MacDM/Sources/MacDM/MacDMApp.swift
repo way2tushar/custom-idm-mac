@@ -32,6 +32,11 @@ struct MacDMApp: App {
         }
         .windowResizability(.contentSize)
 
+        Window("Video Tools", id: "ffmpeg") {
+            FFmpegSetupView()
+        }
+        .windowResizability(.contentSize)
+
         Window("Scheduler", id: "scheduler") {
             SchedulerView().environmentObject(manager)
         }

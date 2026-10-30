@@ -43,6 +43,11 @@ ditto build/MacDM.app ~/Applications/MacDM.app && open ~/Applications/MacDM.app
 Safari ignores the extension while the app runs from an external volume
 (pluginkit lists it with an `F` flag and Safari leaves it out of its list).
 
+On first launch, if `ffmpeg` isn't installed, MacDM opens a **Video Tools** window that
+installs it with Homebrew when you click **Install** (Options → General shows the same status).
+To preview that window on a Mac that has ffmpeg:
+`open ~/Applications/MacDM.app --args -MacDMSimulateMissingFFmpeg YES`.
+
 `scripts/make-icon.swift` draws the app icon; `Resources/MacDM.icns` and
 `Extensions/chrome/icons/` are generated from it.
 

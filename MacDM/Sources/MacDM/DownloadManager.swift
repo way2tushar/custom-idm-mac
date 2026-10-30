@@ -446,6 +446,7 @@ enum Prefs {
     static let captureTypes = "captureTypes"
     static let excludedSites = "excludedSites"
     static let excludedAddresses = "excludedAddresses"
+    static let ffmpegPromptDismissed = "ffmpegPromptDismissed"
     static let hideDockWhenClosed = "hideDockWhenClosed"
 
     static func categoryFolderKey(_ category: FileCategory) -> String { "folder.\(category.rawValue)" }
