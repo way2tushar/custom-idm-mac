@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font: 13px -apple-system, system-ui, sans-serif; width: 280px; margin: 12px; }
+    h1 { font-size: 15px; margin: 0 0 8px; }
+    .status { display: flex; align-items: center; gap: 6px; margin-bottom: 10px; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #999; }
+    .dot.on { background: #2ea043; }
+    .dot.off { background: #d1242f; }
+    label { display: block; margin: 8px 0 4px; }
+    textarea { width: 100%; box-sizing: border-box; height: 72px; font: 12px ui-monospace, monospace; }
+    input[type=number] { width: 80px; }
+    h2 { font-size: 12px; margin: 14px 0 6px; color: #555; }
+    #media { list-style: none; padding: 0; margin: 0; max-height: 200px; overflow: auto; }
+    #media li { display: flex; align-items: center; gap: 6px; padding: 4px 0; border-top: 1px solid #eee; }
+    #media .name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    #media .kind { font-weight: 600; font-size: 11px; }
+    .empty { color: #888; }
+  </style>
+</head>
+<body>
+  <h1>MacDM</h1>
+  <div class="status"><span class="dot" id="dot"></span><span id="state">Checking…</span></div>
+  <label><input type="checkbox" id="enabled"> Capture downloads</label>
+  <label><input type="checkbox" id="launchApp"> Start MacDM when it isn't running</label>
+  <label for="extensions">File types to capture <small>(MacDM's Options → File Types is used while it runs)</small></label>
+  <textarea id="extensions"></textarea>
+  <label>Ignore files smaller than <input type="number" id="minSizeKB" min="0"> KB</label>
+  <h2>Media on this page</h2>
+  <ul id="media"><li class="empty">Nothing found yet. Play the video, then reopen this popup.</li></ul>
+  <script src="popup.js"></script>
+</body>
+</html>
